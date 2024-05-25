@@ -333,8 +333,10 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       if (initialCountryCode.startsWith('+')) {
         initialCountryCode = initialCountryCode.substring(1);
       }
+      print('initialCountryCode: $initialCountryCode');
+
       _selectedCountry = _countryList.firstWhere(
-          (item) => item.code == initialCountryCode,
+          (item) => item.dialCode == initialCountryCode,
           orElse: () => _countryList.first);
 
       // remove country code from the initial number value
